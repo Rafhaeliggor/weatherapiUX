@@ -46,13 +46,16 @@ listCloseTrigger.addEventListener("click", () => {
 
 function iconSvg(main) {
   const weather = String(main || "").toLowerCase();
+  if (weather.includes("tornado")) {
+    return '<img src="Tornado.png" alt="Tornado">';
+  }
   if (weather.includes("rain") || weather.includes("drizzle") || weather.includes("thunder")) {
-    return '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M10 20.5h12.5a5.5 5.5 0 0 0 .37-11A7.5 7.5 0 0 0 8.14 11 4.75 4.75 0 0 0 10 20.5Z" fill="#F4F7FF"/><path d="M12 23.5 10.5 27M17 23.5 15.5 27M22 23.5 20.5 27" stroke="#7FC7FF" stroke-width="2" stroke-linecap="round"/></svg>';
+    return '<img src="Sun cloud mid rain.png" alt="Rain">';
   }
-  if (weather.includes("cloud")) {
-    return '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M10 24.5h12.5a5.5 5.5 0 0 0 .37-11A7.5 7.5 0 0 0 8.14 15 4.75 4.75 0 0 0 10 24.5Z" fill="#F4F7FF"/></svg>';
+  if (weather.includes("cloud") || weather.includes("mist") || weather.includes("fog")) {
+    return '<img src="Moon cloud fast wind.png" alt="Moon">';
   }
-  return '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><circle cx="16" cy="16" r="6" fill="#FFD66B"/><path d="M16 3.5v4M16 24.5v4M28.5 16h-4M7.5 16h-4M24.84 7.16l-2.83 2.83M9.99 22.01l-2.83 2.83M24.84 24.84l-2.83-2.83M9.99 9.99 7.16 7.16" stroke="#FFD66B" stroke-width="2" stroke-linecap="round"/></svg>';
+  return '<img src="Sun cloud mid rain.png" alt="Sun">';
 }
 
 function safeCap(text) {
